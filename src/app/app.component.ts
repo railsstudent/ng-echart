@@ -2,9 +2,13 @@ import { Component } from "@angular/core";
 
 @Component({
     selector: "app-root",
-    templateUrl: "./app.component.html",
-    styleUrls: ["./app.component.scss"],
+    template: "<my-shell></my-shell>",
+    styles: [
+        `
+            :host {
+                display: block;
+            }
+        `,
+    ],
 })
-export class AppComponent {
-    title = "ng-echart";
-}
+export class AppComponent {}
