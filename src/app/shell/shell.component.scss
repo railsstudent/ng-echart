@@ -1,19 +1,19 @@
 :host {
-    display: block;
+  display: block;
 }
 
 .container {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 
-    .chart {
-        height: 500px;
-        width: 500px;
-        margin: 0 1rem;
-    }
+  .chart {
+    height: 500px;
+    width: 500px;
+    margin: 0 1rem;
+  }
 
-    .chart2 {
-        height: 500px;
-        width: 800px;
-    }
+  .chart2 {
+    height: 500px;
+    width: 800px;
+  }
 }

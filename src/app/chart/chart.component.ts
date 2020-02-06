@@ -1,26 +1,26 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from "@angular/core";
-import * as echart from "echarts";
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import * as echart from 'echarts';
 
 @Component({
-    selector: "my-chart",
-    templateUrl: "./chart.component.html",
-    styleUrls: ["./chart.component.scss"],
+  selector: 'my-chart',
+  templateUrl: './chart.component.html',
+  styleUrls: ['./chart.component.scss'],
 })
 export class ChartComponent implements OnInit {
-    @ViewChild("chart", { static: true })
-    elChart: ElementRef | undefined;
+  @ViewChild('chart', { static: true })
+  elChart: ElementRef | undefined;
 
-    @Input()
-    options: echart.EChartOption | undefined;
+  @Input()
+  options: echart.EChartOption | undefined;
 
-    constructor() {}
+  constructor() {}
 
-    ngOnInit() {
-        if (!this.elChart || !this.elChart.nativeElement || !this.options) {
-            return;
-        }
-
-        const chart = echart.init(this.elChart.nativeElement);
-        chart.setOption(this.options);
+  ngOnInit() {
+    if (!this.elChart || !this.elChart.nativeElement || !this.options) {
+      return;
     }
+
+    const chart = echart.init(this.elChart.nativeElement);
+    chart.setOption(this.options);
+  }
 }
