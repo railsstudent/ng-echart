@@ -3,8 +3,21 @@ import * as echart from 'echarts';
 
 @Component({
   selector: 'my-chart',
-  templateUrl: './chart.component.html',
-  styleUrls: ['./chart.component.scss'],
+  styles: [
+    `
+      :host {
+        display: block;
+      }
+
+      .chart {
+        height: 100%;
+        width: 100%;
+      }
+    `,
+  ],
+  template: `
+    <div class="chart" #chart></div>
+  `,
 })
 export class ChartComponent implements OnInit {
   @ViewChild('chart', { static: true })
