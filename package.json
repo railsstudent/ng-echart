@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "github-page-deploy": "ng build --base-href=\"https://railsstudent.github.io/ng-echart\" --prod"
+    "github-page-deploy": "ng build --base-href=\"https://railsstudent.github.io/ng-echart/\" --prod"
   },
   "private": true,
   "dependencies": {
