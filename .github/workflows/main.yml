@@ -1,22 +1,29 @@
 name: CI
-
-on: [push]
-
+on:
+  push:
+    branches:
+      - master
 jobs:
-  build:
-
-    runs-on: ubuntu-18.04
+  deploy:
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js 12.14.1
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12.14.1
-    - name: Build and Deploy
-      uses: JamesIves/github-pages-deploy-action@releases/v2
-      env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BASE_BRANCH: master
-        BRANCH: gh-pages
-        FOLDER: dist/ng-echart
-        BUILD_SCRIPT: npm install && npm run build -- --prod
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Install
+        run: |
+          npm install
+          npm run github-page-deploy
+
+      - name: Build and Deploy Repo
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BASE_BRANCH: master
+          BRANCH: gh-pages
+          CLEAN: true
+          GIT_CONFIG_NAME: Connie Leung
+          GIT_CONFIG_EMAIL: cleung334@gmail.com
+          FOLDER: dist/ng-echart
