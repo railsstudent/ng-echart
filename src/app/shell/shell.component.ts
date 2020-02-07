@@ -38,6 +38,9 @@ export class ShellComponent implements OnInit {
       data: ['shirt', 'cardign', 'chiffon shirt', 'pants', 'heels', 'socks'],
     },
     yAxis: VALUE_TYPE,
+    tooltip: {
+      trigger: 'axis',
+    },
     legend: {
       data: ['Sales'],
     },
@@ -46,6 +49,10 @@ export class ShellComponent implements OnInit {
         name: 'Sales',
         type: 'bar',
         data: [5, 20, 36, 10, 10, 20],
+        label: {
+          show: true,
+          position: 'top',
+        },
       },
     ],
   };
@@ -161,6 +168,9 @@ export class ShellComponent implements OnInit {
     yAxis: VALUE_TYPE,
     legend: {
       data: ['Forest', 'Steppe', 'Desert', 'Wetland', 'Prairie'],
+    },
+    tooltip: {
+      trigger: 'axis',
     },
     series: [
       {
